@@ -1,0 +1,199 @@
+:root {
+  --bg: #f7f3ec;
+  --ink: #1c1814;
+  --muted: #6b5f52;
+  --line: #d9cfc0;
+  --accent: #5c7a3a;
+  --hero: #1c1814;
+  --sans: "Source Sans 3", system-ui, sans-serif;
+  --serif: "Source Serif 4", Georgia, serif;
+  --pad: clamp(1.25rem, 4.5vw, 5rem);
+  --max: 1440px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.band { width: 100%; }
+.band-inner {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.skip-link {
+  position: absolute; left: var(--pad); top: -3rem;
+  background: var(--accent); color: #fff; padding: 0.45rem 0.65rem;
+}
+.skip-link:focus { top: 0.75rem; }
+
+.nav {
+  width: 100%;
+  background: var(--hero);
+  color: #e8e0d4;
+  border-bottom: 3px solid var(--accent);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.1rem;
+  gap: 1rem;
+}
+
+.logo { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.05rem; }
+.nav a.gh { color: #9a8f82; text-decoration: none; font-size: 0.88rem; }
+.nav a.gh:hover { color: #fff; }
+
+.hero-band {
+  width: 100%;
+  background: var(--hero);
+  color: #ede5d9;
+  padding-block: clamp(3.5rem, 9vw, 7rem) clamp(2.5rem, 6vw, 4rem);
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: 1.2fr 0.9fr; }
+}
+
+.kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  line-height: 1.06;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.lede {
+  margin: 0 0 1.75rem;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: #a89a8c;
+  max-width: 38em;
+  line-height: 1.7;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.35rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--accent);
+}
+.btn:hover { background: #4a6330; border-color: #4a6330; color: #fff; }
+
+.btn-ghost {
+  background: transparent;
+  border-color: #5a5248;
+  color: #ede5d9;
+}
+.btn-ghost:hover { border-color: #fff; color: #fff; }
+
+.panel {
+  background: #2a2520;
+  border: 1px solid #3d3630;
+  padding: 1.25rem 1.35rem;
+  font-size: 0.92rem;
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #3d3630;
+  color: #b8aa9c;
+}
+.panel-row:last-child { border-bottom: none; }
+.panel-row strong { color: #ede5d9; font-weight: 600; }
+
+.points-band {
+  padding-block: clamp(3rem, 7vw, 5rem);
+  background: var(--bg);
+}
+
+.points {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 800px) {
+  .points { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
+
+.points h2 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  margin: 0 0 0.5rem;
+}
+
+.points p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+
+.cta-band {
+  width: 100%;
+  background: #ddd0bf;
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.cta-inner {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cta-inner { grid-template-columns: 1fr auto; align-items: end; }
+}
+
+.cta-band h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin: 0 0 0.5rem;
+}
+
+.cta-band p { margin: 0; color: var(--muted); max-width: 36em; }
+
+.footer {
+  width: 100%;
+  background: var(--hero);
+  color: #7a6f64;
+  padding-block: 2rem 2.75rem;
+  font-size: 0.88rem;
+}
+
+.footer p { margin: 0; }
+.footer a { color: #c8baa8; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
